@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="LifeCue is a simple first-aid assistant for clear emergency guidance.">
+<title>LifeCue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+
+<div id="narratorBar" class="narrator-bar" aria-label="LifeCue narrator">
+  <div class="narrator-inner">
+    <div class="narrator-status">
+      <span class="narrator-dot" aria-hidden="true"></span>
+      <div>
+        <strong id="narratorTitle">LifeCue assistant</strong>
+        <small id="narratorStatus">Listen to the guide without reading the screen</small>
+      </div>
+    </div>
+    <div class="narrator-controls">
+      <button id="narratorPlay" class="narrator-main" type="button">Start narrator</button>
+      <button id="narratorPause" type="button">Pause</button>
+      <button id="narratorStop" type="button">Stop</button>
+    </div>
+  </div>
+</div>
+
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#" data-nav="home" aria-label="LifeCue home"><span class="brand-mark">+</span><span><b>LifeCue</b><small>Emergency Response</small></span></a>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
+    <nav class="main-nav">
+      <a href="#guides" data-nav="guides">Emergency Guides</a>
+      <a href="#learn" data-nav="learn">Learn First Aid</a>
+      <a href="#prepare" data-nav="prepare">Prepare</a>
+      <a href="#about" data-nav="about">About</a>
+    </nav>
+    <div class="header-actions"><button class="search-trigger" data-open="search">⌕ <span>Search</span></button><button class="primary small" data-open="emergency">Emergency help</button></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      
+      <h1>When every second matters, <em>know the next step.</em></h1>
+      <p class="hero-lead">LifeCue turns essential first aid knowledge into calm, visual, step by step guidance for common emergencies designed to be useful before professional help arrives.</p>
+      <div class="hero-actions"><button class="primary" data-open="guides">Explore emergency guides</button><button class="outline" id="heroNarrator" type="button">Start narrator</button><button class="text-btn" data-open="prepare">Build your readiness kit</button></div>
+      <div class="trust-row"><div><b>01</b><span>Recognise<br>the emergency</span></div><div><b>02</b><span>Take safe<br>first steps</span></div><div><b>03</b><span>Escalate<br>when needed</span></div></div>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-card visual-main"><img src="assets/images/hero-cpr.jpg" alt="Illustration of first-aid response steps">
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="stats-strip"><div class="container stats"><div><strong>12</strong><span>core emergency topics</span></div><div><strong>04</strong><span>response stages</span></div><div><strong>24/7</strong><span>reference access</span></div><div><strong>1</strong><span>simple goal: safer action</span></div></div></section>
+
+<section id="guides" class="section guide-section">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">EMERGENCY LIBRARY</span><h2>Find the situation you need to handle.</h2></div><p>Start with the closest match. Each guide explains what to look for, what to do first, what to avoid, and when to seek urgent professional help.</p></div>
+  <div class="search-panel"><span>⌕</span><input id="guideSearch" placeholder="Search bleeding, burns, choking, seizures..." aria-label="Search emergency guides"><div class="filter-pills"><button class="active" data-filter="all">All</button><button data-filter="critical">Urgent</button><button data-filter="injury">Injury</button><button data-filter="medical">Medical</button></div></div>
+  <div id="guideGrid" class="guide-grid"></div>
+ </div>
+</section>
+
+<section class="split-feature">
+ <div class="container split-grid">
+   <div class="feature-art"><img src="assets/images/bleeding.jpg" alt="Illustration showing pressure applied to a wound"><span class="image-label">DEMONSTRATION</span></div>
+   <div class="feature-copy"><span class="eyebrow">SEE THE RESPONSE</span><h2>Instructions should be easy to follow under pressure.</h2><p>LifeCue gives one clear action at a time. The demonstration format pairs a simple illustration with numbered steps so a user can understand the sequence at a glance.</p>
+   <div class="mini-steps"><div><b>01</b><span>Protect yourself and assess the scene.</span></div><div><b>02</b><span>Apply appropriate immediate first aid.</span></div><div><b>03</b><span>Get professional help when indicated.</span></div></div>
+   <button class="outline" data-open="bleeding">Open bleeding guide</button></div>
+ </div>
+</section>
+
+<section id="learn" class="section learn-section">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">LEARN THE BASICS</span><h2>Build confidence before an emergency happens.</h2></div><p>Short learning modules help you recognise emergencies and understand the purpose behind each response step.</p></div>
+  <div class="learning-grid">
+   <article class="learning-card featured"><div class="learning-image"><img src="assets/images/first60.jpg" alt="Airway breathing circulation learning illustration"></div><div class="learning-body"><span class="tag">FOUNDATION</span><h3>The first 60 seconds</h3><p>A practical overview of scene safety, responsiveness, airway, breathing, circulation and escalation.</p><button class="link-btn" data-open="first60">Read module</button></div></article>
+   <article class="learning-card"><div class="icon-panel">◈</div><div class="learning-body"><span class="tag">GUIDE</span><h3>How to assess an emergency</h3><p>Learn a simple sequence for deciding what needs attention first.</p><button class="link-btn" data-open="assessment">Open lesson</button></div></article>
+   <article class="learning-card"><div class="icon-panel">✚</div><div class="learning-body"><span class="tag">SKILL</span><h3>Build a useful first-aid kit</h3><p>Understand the everyday supplies that can support basic first aid.</p><button class="link-btn" data-open="kit">View checklist</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="prepare" class="prepared-section">
+ <div class="container prepare-grid">
+  <div><span class="eyebrow">READY BEFORE IT HAPPENS</span><h2>Preparedness is more than keeping a box of supplies.</h2><p>Know where your first-aid kit is, keep important contacts accessible, understand your local emergency process, and make a plan for people who may need additional support.</p><div class="prepare-list"><div><i>01</i><span><b>Know your contacts</b><small>Keep local emergency numbers and key family contacts easy to reach.</small></span></div><div><i>02</i><span><b>Check your kit</b><small>Replace expired, used or damaged supplies regularly.</small></span></div><div><i>03</i><span><b>Practice the basics</b><small>Familiarity makes it easier to act calmly and safely.</small></span></div></div><button class="primary" data-open="kit">Open preparedness checklist</button></div>
+  <div class="kit-visual"><img src="assets/images/kit.jpg" alt="Illustration of a first aid kit and supplies"></div>
+ </div>
+</section>
+
+<section class="numbers-section"><div class="container"><div class="section-head"><div><span class="eyebrow">QUICK REFERENCE</span><h2>Four questions to ask when you arrive.</h2></div></div><div class="number-grid"><div><b>01</b><h3>Is the scene safe?</h3><p>Do not rush into a hazard. Look for traffic, fire, electricity, violence or other immediate danger.</p></div><div><b>02</b><h3>Are they responsive?</h3><p>Use an appropriate verbal and physical check while keeping the situation calm.</p></div><div><b>03</b><h3>Are they breathing normally?</h3><p>Breathing concerns can require urgent professional assistance. Follow appropriate emergency guidance.</p></div><div><b>04</b><h3>What help is needed?</h3><p>Escalate early when the situation is severe, worsening or beyond basic first-aid support.</p></div></div></div></section>
+
+<section id="about" class="about-section"><div class="container about-grid"><div><span class="eyebrow">ABOUT LIFECUE</span><h2>A simple assistant when someone needs help.</h2><p>LifeCue is a simple emergency-response assistant. Its interface is built around one principle: when people are stressed, information should become easier to scan, not harder.</p><p>The product separates urgent actions from background education, uses demonstrations where a visual explanation is useful, and keeps escalation guidance visible.</p></div><div class="principles"><div><span>01</span><b>Clarity</b><p>Plain language and one action at a time.</p></div><div><span>02</span><b>Structure</b><p>Consistent patterns across emergency topics.</p></div><div><span>03</span><b>Safety</b><p>Clear limits and professional escalation.</p></div><div><span>04</span><b>Accessibility</b><p>Readable, responsive and easy to navigate.</p></div></div></div></section>
+</main>
+
+<footer><div class="container footer-grid"><div class="brand footer-brand"><span class="brand-mark">+</span><span><b>LifeCue</b><small>Emergency Response</small></span></div><p>Educational emergency-response interface concept. Always follow current local emergency and first-aid guidance.</p><div><a href="#guides">Guides</a><a href="#learn">Learn</a><a href="#prepare">Prepare</a></div></div></footer>
+
+<div id="drawer" class="drawer hidden"><div class="drawer-backdrop"></div><aside class="drawer-panel"><button class="drawer-close">×</button><div id="drawerContent"></div></aside></div>
+<div id="toast" class="toast"></div>
+<script src="assets/app.js"></script>
+</body></html>
